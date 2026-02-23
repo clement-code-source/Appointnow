@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Link } from 'react-router-dom'
 
 import Dermatologist from '../assets/assets_frontend/Dermatologist.svg'

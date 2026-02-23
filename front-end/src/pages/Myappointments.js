@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 function Myappointments() {
@@ -6,7 +6,7 @@ function Myappointments() {
 
   const getAppointments = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/patient/myappointments")
+      const res = await axios.get("https://appointnow-backend-irpr.onrender.com/patient/myappointments")
       setBooked(res.data.results) 
     } catch (error) {
       console.error(error)

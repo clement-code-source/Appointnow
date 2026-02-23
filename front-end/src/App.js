@@ -1,9 +1,8 @@
-import React from 'react'
+
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 import Homepage from './pages/Homepage'
 import Doctorspage from './pages/Doctorspage'
 import Aboutpage from './pages/Aboutpage'
-import Contactpage from './pages/Contactpage'
 import Loginpage from './pages/Loginpage'
 import Appointments from './pages/Appointments'
 import Navbar from './components/Navbar'
@@ -11,13 +10,24 @@ import Contact from './components/Contact'
 
 import assetsData from './assets/assets_frontend/assets'
 import Myappointments from './pages/Myappointments'
+import { useState } from "react"
 
 
 
 
 function App() {
   const {doctors}=assetsData;
+  const [isloggedin,setisloggedin]=useState(false)
 
+  const  checkAuth=()=>{
+    const token=localStorage.getItem("loggintoken")
+    if (!token){
+      window.alert("please loggin")
+
+    }
+    setisloggedin(true)
+
+  }
 
   return (
     <BrowserRouter> 

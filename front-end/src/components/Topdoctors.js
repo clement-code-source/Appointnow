@@ -1,5 +1,5 @@
-import React from 'react'
-import { Navigate,useNavigate } from 'react-router-dom'
+
+import { useNavigate } from 'react-router-dom'
 import doc1 from '../assets/assets_frontend/doc1.png'
 import doc2 from '../assets/assets_frontend/doc2.png'
 import doc3 from '../assets/assets_frontend/doc3.png'

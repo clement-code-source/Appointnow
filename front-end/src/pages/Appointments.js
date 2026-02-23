@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import assetsData from '../assets/assets_frontend/assets'
 import axios from 'axios'
@@ -85,21 +85,27 @@ function Appointments({ doctors = [] }) {
   }
 
   const aData = {
-    docid: docInfo._id,
+    docid: Number(docInfo._id),
     name: docInfo.name,               
     speciality: docInfo.speciality,   
     date: chosenDate.toISOString().split("T")[0], 
     time: parseInt(chosenSlot.replace(":", ""))   
   }
 
-  try {
-    await axios.post("http://localhost:5000/patient/appointment", aData);
-    window.alert("Appointment booked successfully");
+ try {
+    await axios.post(
+      "https://appointnow-backend-irpr.onrender.com/patient/appointment",
+      aData
+    );
+
+   
+    window.alert( "appointment booked successfully" );
   } catch (error) {
     console.error(error);
     window.alert("Failed to book appointment");
   }
 };
+
 
 
   
@@ -132,7 +138,7 @@ function Appointments({ doctors = [] }) {
             <h3 className="text-2xl">{docInfo.speciality}</h3>
             <>
               <p className="py-0 font-semibold">About</p>
-              <img className="w-5" src={assets.info_icon} />
+              <img className="w-5" src={assets.info_icon} alt='icon'/>
               <p className="py-2">{docInfo.about}</p>
             </>
           </section>

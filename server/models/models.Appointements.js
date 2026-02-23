@@ -4,7 +4,7 @@ const mongoose=require('mongoose');
 
 
 const appointmentScheme= new mongoose.Schema({
-    docid:{type:Number,require:true},
+    docid:{type:String,require:true},
     name:{type:String,require:true},
     speciality:{type:String,require:true},
     date:{type:String,require:true},
@@ -13,7 +13,7 @@ const appointmentScheme= new mongoose.Schema({
 
 })
 
-const Appointmentsmodel=mongoose.model("appointment",appointmentScheme)
+const Appointmentsmodel=mongoose.model("appointments",appointmentScheme)
 
 
 module.exports=Appointmentsmodel

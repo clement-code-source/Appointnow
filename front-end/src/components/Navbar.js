@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+
 import { NavLink, useNavigate } from 'react-router-dom'
 import assetsData from "../assets/assets_frontend/assets"
 
@@ -7,8 +7,7 @@ const { assets } = assetsData
 
 const Navbar = () => {
  
-  const [Showmenu,setShowmenu]=useState(false);
-  const [Token,setToken]=useState(true);
+
 
 
   const navigate=useNavigate();
@@ -53,16 +52,8 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <div>
-          { Token?<div>
-            <img className='w-8 rounded-full' src={assets.profile_pic}/>
-            <img className='w-2.5'src={assets.dropdown_icon}/>
-          </div>:
-            <button className="  md:mt-1 md:ml-2 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 hidden md:block transition" onClick={()=>{navigate("/login")} }>
-              Sign Up
-            </button>
-          }
-        </div>
+        
+         
       </div>
     </div>
   )

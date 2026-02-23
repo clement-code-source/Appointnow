@@ -1,4 +1,4 @@
-import React from 'react'
+
 import assetsData from '../assets/assets_frontend/assets'
 
 function Header() {
